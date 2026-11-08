@@ -1,20 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+ExamGom is an examination management workspace built with Next.js and Drizzle.
+
+Email/password sign-in, database sessions, and role-based account management are
+implemented. See [authentication setup](docs/authentication.md) for database
+preparation, first-admin provisioning, and the deferred invitation workflow.
+
+Exam controllers can also [create assignments](docs/assignments.md) with
+instructions and selected faculty. Apply the Drizzle schema with `bun run db:push`.
+
+Dashboard pages share [role-specific sidebar navigation](docs/navigation.md),
+based on the `/admin-testing` sidebar demonstration.
+
+Superadmins and exam controllers can [view all users](docs/user-management.md),
+create permitted accounts, reset passwords, and enable or disable account access.
 
 ## Getting Started
 
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+bun install
+bun run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+Validate with `bun run test:auth`, `bunx tsc --noEmit`, `bun run lint`, and
+`bun run build`.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 

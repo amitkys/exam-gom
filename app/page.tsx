@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
+import { redirect } from "next/navigation";
 
 export default function Page() {
-  return <Button className={"text-3xl"}>Test</Button>
+  redirect("/dashboard");
 }
